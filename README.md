@@ -8,8 +8,7 @@ for that specific block.
 Block content machine name module requires [machine_name_widget](https://www.drupal.org/project/machine_name_widget)
 module.
 
-After successfully configured the module you'll have additional template suggestions
-for FE.
+After successful installation the module will provide additional template suggestion for FE.
 - block--block_content--[MACHINE_NAME].html.twig
 
 i.e.
