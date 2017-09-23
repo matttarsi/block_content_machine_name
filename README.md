@@ -5,7 +5,7 @@ Block content machine name adds machine_name field for block_content block
 content type. Which is used to define the specific block template and class name
 for that specific block.
 
-Block content machine name module requires [![machine_name_widget](https://www.drupal.org/project/machine_name_widget)]
+Block content machine name module requires [machine_name_widget](https://www.drupal.org/project/machine_name_widget)
 module.
 
 After successfully configured the module you'll have additional template suggestions
@@ -25,8 +25,7 @@ Setup
 --------
 
 Enable the module and you will have the machine name field. you have to update
-the machine name manually (for now) for all the block_content if you are using
-the module in existing site.
+the machine name manually (for now) for all the block_content.
 
 Author/Maintainer
 -----------------
