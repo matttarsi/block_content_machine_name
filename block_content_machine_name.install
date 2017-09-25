@@ -13,6 +13,6 @@ function block_content_machine_name_install() {
   /** @var \Drupal\Core\Entity\EntityFieldManagerInterface $field_manager */
   $field_manager = \Drupal::service('entity_field.manager');
   $entity_definition_update_manager = \Drupal::entityDefinitionUpdateManager();
-  $workbench_moderation_definition = $field_manager->getFieldStorageDefinitions('block_content')['machine_name'];
-  $entity_definition_update_manager->installFieldStorageDefinition('machine_name', 'block_content', 'block_content_machine_name', $workbench_moderation_definition);
+  $block_content_machine_name_definition = $field_manager->getFieldStorageDefinitions('block_content')['machine_name'];
+  $entity_definition_update_manager->installFieldStorageDefinition('machine_name', 'block_content', 'block_content_machine_name', $block_content_machine_name_definition);
 }
