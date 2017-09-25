@@ -3,8 +3,6 @@
   "description": "Creates machine name field for block_content and allows user to create default blocks with machine name.",
   "type": "drupal-module",
   "homepage": "http://drupal.org/project/block_content_machine_name",
-  "license": "GPL-2.0+",
-  "minimum-stability": "dev",
   "authors": [
     {
       "name": "Mitesh Patel",
@@ -12,11 +10,13 @@
       "role": "Maintainer"
     }
   ],
-  "require": {
-    "drupal/machine_name_widget": "^1.0"
-  },
   "support": {
     "issues": "https://www.drupal.org/project/issues/block_content_machine_name",
     "source": "http://cgit.drupalcode.org/block_content_machine_name"
+  },
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "require": {
+    "drupal/machine_name_widget": "^1.0"
   }
 }
