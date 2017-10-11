@@ -5,11 +5,9 @@
  * Module file for block_content_machine_name.
  */
 
-use Drupal\block\Entity\Block;
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Entity\EntityTypeInterface;
-use \Drupal\Core\Form\FormStateInterface;
 
 /**
  * Implements hook_entity_base_field_info().
@@ -76,14 +74,6 @@ function block_content_machine_name_preprocess_block(&$variables) {
  * Implements hook_theme_suggestions_block_alter().
  */
 function block_content_machine_name_theme_suggestions_block_alter(array &$suggestions, array $variables) {
-  // Get the template suggestion if defined.
-  $block = Block::load($variables['elements']['#id']);
-  $suggestion = $block->getThirdPartySetting('block_content_machine_name', 'template_suggestion', '');
-  if (!empty($suggestion)) {
-    $suggestions[] = $suggestion;
-  }
-
-  // Add template suggestion based on machine name.
   switch ($variables['elements']['#base_plugin_id']) {
     case 'block_content':
       $block_content = $variables['elements']['content']['#block_content'];
@@ -91,32 +81,4 @@ function block_content_machine_name_theme_suggestions_block_alter(array &$sugges
       $suggestions[] = 'block__block_content__' . $machine_name;
       break;
   }
-}
-
-/**
- * Implements hook_form_FORM_ID_alter().
- */
-function block_content_machine_name_form_block_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  // Get the thir party setting for template suggestion.
-  $block = $form_state->getFormObject()->getEntity();
-  $suggestion = $block->getThirdPartySetting('block_content_machine_name', 'template_suggestion', '');
-
-  $form['settings']['template_suggestion'] = [
-    '#type' => 'textfield',
-    '#title' => t('Template suggestion'),
-    '#default_value' => $suggestion,
-  ];
-
-  // Submit handler to store third party setting of template suggestion.
-  array_unshift($form['actions']['submit']['#submit'], 'block_content_machine_name_block_form_submit');
-}
-
-/**
- * Submit handler to set third party settings for template suggestion.
- */
-function block_content_machine_name_block_form_submit(&$form, FormStateInterface $form_state) {
-  $values = $form_state->getValues();
-  $block = $form_state->getFormObject()->getEntity();
-  $template = !empty($values['settings']['template_suggestion']) ? $values['settings']['template_suggestion'] : NULL;
-  $block->setThirdPartySetting('block_content_machine_name', 'template_suggestion', $template)->save();
 }
