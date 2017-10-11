@@ -2,8 +2,7 @@ Block content machine name
 --------
 
 Block content machine name adds machine_name field for block_content block
-content type. Which is used to define the specific block template and class name
-for that specific block.
+content type. Which is used to define the specific block template for that specific block.
 
 Block content machine name module requires [machine_name_widget](https://www.drupal.org/project/machine_name_widget)
 module.
@@ -11,14 +10,14 @@ module.
 After successful installation the module will provide additional template suggestion for FE.
 - block--block_content--[MACHINE_NAME].html.twig
 
-i.e.
-IF you have block_content created for copyright block and you have created
-machine_name for that block as copyright. then you will have template suggestion
+i.e. If you have block_content created for copyright block and you have created
+machine_name for that block as copyright. Then You will have template suggestions as listed below.
 - block--block_content--copyright.html.twig
-
-The block will also have two additional unique classes:
 - block-content--MACHINE_NAME
 - block-type-block-content
+
+you can also add template suggestion in block content while create / edit of the block. With this feature you can use the same template again and again for different block contents.
+
 
 Setup
 --------
