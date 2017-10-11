@@ -15,4 +15,7 @@ function block_content_machine_name_install() {
   $entity_definition_update_manager = \Drupal::entityDefinitionUpdateManager();
   $block_content_machine_name_definition = $field_manager->getFieldStorageDefinitions('block_content')['machine_name'];
   $entity_definition_update_manager->installFieldStorageDefinition('machine_name', 'block_content', 'block_content_machine_name', $block_content_machine_name_definition);
+  // Install template_suggestion field for block_content.
+  $block_content_template_suggestion_definition = $field_manager->getFieldStorageDefinitions('block_content')['template_suggestion'];
+  $entity_definition_update_manager->installFieldStorageDefinition('template_suggestion', 'block_content', 'block_content_machine_name', $block_content_template_suggestion_definition);
 }
