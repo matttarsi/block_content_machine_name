@@ -1,0 +1,7 @@
+block.block.*.third_party.block_content_machine_name:
+  type: mapping
+  label: 'Template suggestion for block'
+  mapping:
+   template_suggestion:
+     type: string
+     label: 'Template suggestion'
