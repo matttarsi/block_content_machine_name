@@ -19,3 +19,15 @@ function block_content_machine_name_install() {
   $block_content_template_suggestion_definition = $field_manager->getFieldStorageDefinitions('block_content')['template_suggestion'];
   $entity_definition_update_manager->installFieldStorageDefinition('template_suggestion', 'block_content', 'block_content_machine_name', $block_content_template_suggestion_definition);
 }
+
+/**
+ * Add template_suggestion field to block_content.
+ */
+function block_content_machine_name_update_8001() {
+  /** @var \Drupal\Core\Entity\EntityFieldManagerInterface $field_manager */
+  $field_manager = \Drupal::service('entity_field.manager');
+  $entity_definition_update_manager = \Drupal::entityDefinitionUpdateManager();
+  // Install template_suggestion field for block_content.
+  $block_content_template_suggestion_definition = $field_manager->getFieldStorageDefinitions('block_content')['template_suggestion'];
+  $entity_definition_update_manager->installFieldStorageDefinition('template_suggestion', 'block_content', 'block_content_machine_name', $block_content_template_suggestion_definition);
+}
