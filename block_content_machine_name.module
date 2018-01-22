@@ -36,15 +36,15 @@ function block_content_machine_name_entity_base_field_info(EntityTypeInterface $
       ->setDisplayConfigurable('form', TRUE);
 
     $fields['template_suggestion'] = BaseFieldDefinition::create('string')
-       ->setLabel(t('Template suggestion'))
-       ->setDescription(t('template suggestion for this block content. i.e. block__test'))
-       ->setRequired(FALSE)
-       ->setSetting('max_length', 255)
-        ->setDisplayOptions('form', [
-          'type' => 'string_textfield',
-          'weight' => -5,
-        ])
-       ->setDisplayConfigurable('form', TRUE);
+      ->setLabel(t('Template suggestion'))
+      ->setDescription(t('template suggestion for this block content. i.e. block__test'))
+      ->setRequired(FALSE)
+      ->setSetting('max_length', 255)
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => -5,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
 
     return $fields;
   }

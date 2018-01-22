@@ -4,5 +4,5 @@ description: 'Creates machine name field for block_content and allows user to cr
 package: Other
 core: 8.x
 dependencies:
-  - block_content
-  - machine_name_widget
+  - drupal:block_content
+  - machine_name_widget:machine_name_widget
