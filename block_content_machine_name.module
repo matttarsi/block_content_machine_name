@@ -90,13 +90,14 @@ function block_content_machine_name_theme_suggestions_block_alter(array &$sugges
   switch ($variables['elements']['#base_plugin_id']) {
     case 'block_content':
       $block_content = $variables['elements']['content']['#block_content'];
+      $machine_name = $block_content->get('machine_name')->value;
+      $suggestions[] = 'block__' . $block_content->getEntityTypeId() . '__' . $machine_name;
+      $suggestions[] = 'block__' . $block_content->getEntityTypeId() . '__' . $block_content->bundle() . '__' . $machine_name;
+
       $template_suggestion = $block_content->get('template_suggestion')->value;
       if (!empty($template_suggestion)) {
         $suggestions[] = $template_suggestion;
       }
-
-      $machine_name = $block_content->get('machine_name')->value;
-      $suggestions[] = 'block__block_content__' . $machine_name;
       break;
   }
 }
