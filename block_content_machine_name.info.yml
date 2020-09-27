@@ -1,4 +1,4 @@
-name: 'Block content machine name'
+name: 'Block Content Machine Name'
 type: module
 description: 'Creates machine name field for block_content and allows user to create default blocks with machine name.'
 package: Other
