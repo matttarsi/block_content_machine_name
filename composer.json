@@ -17,6 +17,6 @@
   "license": "GPL-2.0+",
   "minimum-stability": "dev",
   "require": {
-    "drupal/machine_name_widget": "^1.0"
+    "drupal/machine_name_widget": "^2.0"
   }
 }
